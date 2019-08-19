@@ -1,0 +1,99 @@
+<html lang="es"><head>
+        <meta charset="utf-8">
+        <title>gru5web</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="property-details.css">
+        <link rel="stylesheet" href="../icons/css/ionicons.min.css">
+        
+    </head>
+    <body onload="getProperty()">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/property-portal-logo.png" alt="Property Portal">
+                </a>
+            </div>
+            <div>
+                <button class="link-button ion-log-out" onclick="logout()"> Cerrar Sesión</button>
+            </div>      
+        </div>
+
+        <div class="content">
+
+            <div>
+                <h3>Detalles de la vivienda seleccionada</h3>
+            </div>
+
+            <div id="nav-section">
+                <button class="nav-button" id="previousProperty" onclick="displayPreviousProperty()">Ir a la anterior vivienda</button>
+                <button class="nav-button" id="nextProperty" onclick="displayNextProperty()">Ir a la siguiente vivienda</button>
+            </div>
+
+             <input type="hidden" id="propertyId" value="9">
+
+            <div id="images-section">
+                <img id="main-image" src="/images/canmore1.jpg"> 
+                <div id="miniature-images-section"><img src="/images/canmore1.jpg" id="0" class="miniature-image"><img src="/images/canmore2.jpg" id="1" class="miniature-image"><img src="/images/canmore4.jpg" id="2" class="miniature-image"><img src="/images/canmore5.jpg" id="3" class="miniature-image"><img src="/images/canmore7.jpg" id="4" class="miniature-image"><img src="/images/canmore8.jpg" id="5" class="miniature-image"></div>
+            </div>
+
+            <div id="price-section">
+                <i class="ion-pricetag" aria-hidden="true"></i>
+                <span id="price">5900000 €</span>
+                <i class="ion-ios-heart" aria-hidden="true"></i>
+                <span id="likes">2</span>
+            </div>
+            
+            <div>
+                <i class="ion-calendar" aria-hidden="true"></i>
+                <span id="year">2014</span>
+                <i class="ion-crop" aria-hidden="true"></i>
+                <span id="numberOfBedrooms">8 habitaciones</span>
+            </div>
+    
+            <div>
+                <i class="ion-location" aria-hidden="true"></i>
+                <span id="address">Avenida Carmilla,4. Marcilla (Navarra)</span>
+            </div>
+            
+            <div id="description-section">
+                <h4>Descripción</h4>
+                <hr>
+                <p id="description">Vivienda de lujo en pleno corazón del parque Nacional de Bardenas Reales, rodeado de naturaleza y cerca del núcleo urbano, ideal para los amantes del senderismo.</p>
+            </div>
+            
+            <div>
+                <h4>Envíele un comentario al propietario</h4>
+                <hr>
+                <form id="peopleComments" onsubmit="return publishComment();">
+                    <div>
+                        <input textarea="" id="comments" rows="4" cols="50" required="" placeholder="Escriba aquí su comentario"> 
+                        <label>Comments</label>
+                    </div>
+                    <div>
+                    <input type="submit" value="Enviar">
+                    </div>
+                </form>
+
+            </div>
+            
+            
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <i class="ion-social-facebook" aria-hidden="true"></i>
+                <i class="ion-social-twitter" aria-hidden="true"></i>
+                <i class="ion-social-instagram" aria-hidden="true"></i>
+            </div>
+            <div>
+                <p>© 2017, Property Portal España</p>
+            </div>
+        </div> 
+
+        <script src="../storage-manager.js"></script>
+        <script src="property-details.js"></script>
+    
+
+</body></html>

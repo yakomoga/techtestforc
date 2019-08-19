@@ -1,0 +1,73 @@
+<html lang="es"><head>
+        <meta charset="utf-8">
+        <title>gru5web</title>
+        <link rel="stylesheet" href="../styles.css">
+        <link rel="stylesheet" href="properties.css">
+        <link rel="stylesheet" href="../icons/css/ionicons.min.css">
+        
+    </head>
+    <body onload="pageLoaded()">
+        <!-- Header -->
+        <div class="header">
+            <div class="logo">
+                <a href="../index.html">
+                    <img src="../images/property-portal-logo.png" alt="Property Portal">
+                </a>
+            </div>
+            <div>
+                <button class="link-button ion-log-out" onclick="logout()"> Cerrar Sesión
+            </button></div>      
+        </div>
+
+        <div class="content">
+            <div>
+                <h3>Viviendas encontradas en la provincia seleccionada</h3>
+            </div>
+
+            <div>
+                <label>Ver primero</label>
+                <select id="filter" onchange="filterChanged()">
+                    <option value="cheapest">los más baratos</option> 
+                    <option value="mostExpensive">los más caros</option>
+                    <option value="mostRooms">los que tienen más habitaciones</option>
+                    <option value="leastRooms">los que tienen menos habitaciones</option>
+                    <option value="newest">los más nuevos</option>
+                    <option value="oldest">los más antiguos</option>
+                    <option value="popular">los más populares</option>
+                    <option value="unpopular">los menos populares</option>
+                </select>
+            </div>
+
+            <div id="propertiesList"><div id="card-9" class="card"><img id="image-9" src="/images/canmore1.jpg"><div id="innerDiv-9" class=""><h2 id="price-9">5900000€</h2><span id="rooms-9">8 habitaciones</span><span id="year-9">2014</span><p id="likes-9" class="likes">0 interesados</p><p id="address-9">Avenida Carmilla,4 Marcilla</p><p id="description-9">Vivienda de lujo en pleno corazón del parque Nacional de Bardenas Reales, rodeado de naturaleza y cerca del núcleo urbano, ideal para los amantes del senderismo.</p></div></div><div id="card-6" class="card"><img id="image-6" src="/images/elizondo1.jpg"><div id="innerDiv-6" class=""><h2 id="price-6">5000000€</h2><span id="rooms-6">5 habitaciones</span><span id="year-6">2015</span><p id="likes-6" class="likes">0 interesados</p><p id="address-6">Calle Aramburu,2 Elizondo</p><p id="description-6">Chalet de lujo a escasos minutos del centro, el lujoso mobiliario está realizado con maderas autóctonas de la zona de Elizondo por ebanistas que trabajan con herramientas y técnicas de hace 100 años</p></div></div><div id="card-4" class="card"><img id="image-4" src="/images/madrid1.jpg"><div id="innerDiv-4" class=""><h2 id="price-4">1000000€</h2><span id="rooms-4">3 habitaciones</span><span id="year-4">1945</span><p id="likes-4" class="likes">0 interesados</p><p id="address-4">Calle de la Estafeta, 21 Pamplona</p><p id="description-4">Piso lujoso en el centro de Pamplona, a 100 metros de transporte público, restaurantes y supermercados</p></div></div><div id="card-5" class="card"><img id="image-5" src="/images/madrid5.jpg"><div id="innerDiv-5" class=""><h2 id="price-5">950000€</h2><span id="rooms-5">6 habitaciones</span><span id="year-5">2000</span><p id="likes-5" class="likes">0 interesados</p><p id="address-5">Avenida de Carlos III,24 Guerendiain</p><p id="description-5">Chalet a las afueras de Pamplona, urbanización tranquila y situado en plena naturaleza</p></div></div><div id="card-7" class="card"><img id="image-7" src="/images/irati1.jpg"><div id="innerDiv-7" class=""><h2 id="price-7">900000€</h2><span id="rooms-7">4 habitaciones</span><span id="year-7">2001</span><p id="likes-7" class="likes">0 interesados</p><p id="address-7">Calle San Fermín,54 Aurizberri</p><p id="description-7">Casa tradicional, en el casco urbano de la ciudad con vistas a la Selva de Irati</p></div></div><div id="card-8" class="card"><img id="image-8" src="/images/olite1.jpg"><div id="innerDiv-8" class=""><h2 id="price-8">700000€</h2><span id="rooms-8">5 habitaciones</span><span id="year-8">1999</span><p id="likes-8" class="likes">0 interesados</p><p id="address-8">Calle Kodro, 43 Olite</p><p id="description-8">Chalet en urbanización cercana al pueblo, amplio terreno para construir más edificios anexos</p></div></div><div id="card-2" class="card"><img id="image-2" src="/images/allende1.jpg"><div id="innerDiv-2" class=""><h2 id="price-2">550000€</h2><span id="rooms-2">7 habitaciones</span><span id="year-2">1990</span><p id="likes-2" class="likes">0 interesados</p><p id="address-2">Calle Trasgo, s/n Idiazabal</p><p id="description-2">En pleno corazón de la Sierra de Aralar, con vistas espectaculares a ésta, ideal para desconectar y vivir apartado del mundo. El terreno incluye establo y granja.</p></div></div><div id="card-3" class="card"><img id="image-3" src="/images/pontevedra1.jpg"><div id="innerDiv-3" class=""><h2 id="price-3">355000€</h2><span id="rooms-3">6 habitaciones</span><span id="year-3">2013</span><p id="likes-3" class="likes">0 interesados</p><p id="address-3">Calle Olentzero, 34 Tafalla</p><p id="description-3">Chalet en paraje natural, vivienda tranquila a 1 km del pueblo</p></div></div><div id="card-1" class="card"><img id="image-1" src="/images/leon1.jpg"><div id="innerDiv-1" class=""><h2 id="price-1">300000€</h2><span id="rooms-1">5 habitaciones</span><span id="year-1">1956</span><p id="likes-1" class="likes">0 interesados</p><p id="address-1">Calle Río Luna, 19 Tajonar</p><p id="description-1">Casa tradicional, completamente amueblada, naturaleza de vanguardia</p></div></div></div>
+            <!--
+            TEMPLATE FOR CARDS CREATED FROM JAVASCRIPT
+            <div id="" class="card">
+                <img src="../images/allende1.jpg">
+                <div>
+                    <h2>210.000 €</h2>
+                    <span>3 habitaciones</span>
+                    <span>2010</span>
+                    <p>Av. Marqués de Montroig</p>
+                    <p>Casa independiente de alto standing a 4 vientos situada en la población de Premià de Dalt, por la zona de Nucli Antic</p>
+                </div>
+            </div>-->
+
+        </div>
+        
+        <!-- Footer -->
+        <div class="footer">
+            <div>
+                <i class="ion-social-facebook" aria-hidden="true"></i>
+                <i class="ion-social-twitter" aria-hidden="true"></i>
+                <i class="ion-social-instagram" aria-hidden="true"></i>
+            </div>
+            <div>
+                <p>© 2017, Property Portal España</p>
+            </div>
+        </div> 
+
+        <script src="../storage-manager.js"></script>
+        <script src="properties.js"></script>
+    
+
+</body></html>
