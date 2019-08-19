@@ -4,7 +4,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class Register {
-    private final String registerForm = "//form[@id='registerForm']";
     public final String registerFormName = "//input[@id='name']";
     private final String registerFormLastname = "//input[@id='lastname']";
     private final String registerFormDNI = "//input[@id='dni']";
@@ -52,7 +51,5 @@ public class Register {
         $x(registerFormVerifyPassword).sendKeys(defaultPassword);
         $x(registerFormSubmitButton).click();
         assert url().equals(login.getLoginURL());
-  //      $(login.loginForm).should(Condition.exist);
     }
-
 }

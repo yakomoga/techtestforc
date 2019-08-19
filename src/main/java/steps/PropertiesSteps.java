@@ -7,11 +7,10 @@ import pages.Properties;
 import static com.codeborne.selenide.Selenide.back;
 
 public class PropertiesSteps {
-   // private Register register;
-   // private Homepage homepage;
+
     private Properties properties;
 
-    public PropertiesSteps(){
+    public PropertiesSteps() {
         properties = new Properties();
     }
 
@@ -23,7 +22,7 @@ public class PropertiesSteps {
 
     @When("I filter properties by (.*?)")
     public void iFilterPropertiesBy(String filterValue) {
-       properties.filterPropertyBy(filterValue);
+        properties.filterPropertyBy(filterValue);
     }
 
     @When("I check {int} property likes")
@@ -51,7 +50,7 @@ public class PropertiesSteps {
     @Then("Likes is increased by one")
     public void likesIsIncreasedByOne() {
         properties.currentHeartLikesAmount = properties.getHeartLikes();
-        properties.currentHeartLikesAmount= properties.initialHeartLikesAmount+1;
+        properties.currentHeartLikesAmount = properties.initialHeartLikesAmount + 1;
     }
 
     @When("I go to the previous page")
@@ -62,6 +61,5 @@ public class PropertiesSteps {
     @Then("the item has increased amount of likes")
     public void theItemHasLike() {
         assert properties.getNthPropertyLikes(properties.propertyIndex).equals(properties.initialLikes + 1);
-        // Write code here that turns the phrase above into concrete actions
     }
 }

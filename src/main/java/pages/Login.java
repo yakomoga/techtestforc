@@ -6,7 +6,6 @@ import static com.codeborne.selenide.Selenide.*;
 import static com.codeborne.selenide.WebDriverRunner.url;
 
 public class Login {
-    public static String loginForm = "//div[@class='form-card']";
     private static String loginURL = "https://grup5web.firebaseapp.com/login/login.html";
     private static String loginSuccessfulURL = "https://grup5web.firebaseapp.com/map/map.html";
     private static String loginUsername = "//input[@id='username']";

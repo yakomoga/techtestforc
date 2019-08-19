@@ -15,11 +15,9 @@ public class Homepage {
     private final String homepageURL = "https://grup5web.firebaseapp.com";
 
     private Register register;
-    private Login login;
 
     public Homepage() {
         register = new Register();
-        login = new Login();
     }
 
     public void openHomepage() {
@@ -31,11 +29,5 @@ public class Homepage {
         $x(registerButton).click();
         GeneralSteps.waitDataToLoad();
         $x(register.registerFormName).should(Condition.exist);
-    }
-
-    public void openLoginForm(){
-        $x(loginButton).click();
-        GeneralSteps.waitDataToLoad();
-        $x(login.loginForm).should(Condition.exist);
     }
 }
