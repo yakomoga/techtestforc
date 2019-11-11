@@ -1,41 +1,26 @@
 package pages;
 
 import com.codeborne.selenide.Condition;
-import com.codeborne.selenide.ElementsCollection;
 import general.GeneralSteps;
 
-import java.util.ArrayList;
-
-import static com.codeborne.selenide.Selenide.*;
+import static com.codeborne.selenide.Selenide.$x;
+import static com.codeborne.selenide.Selenide.open;
 
 public class Properties {
-    private ArrayList<String> properties;
-    public static String propertiesProvinceName = "";
-    public static String filterValue = "";
-    public static String propertiesProvinceURL = "https://grup5web.firebaseapp.com/properties/properties.html?region=";
     private static String propertiesFilterDropdown = "//select[@id='filter']";
     private static String propertiesFilterDropdownValue = "//select[@id='filter']//option[@value='";
-    private static String propertiesList = "//div[@id='propertiesList']";
-    private static int propertiesCount;
-    private String nthProperty;
-    private String nthPropertyLikes;
-    private static String commentField = "//input[@id='comments']";
     private static String submitComment = "//input[@type='submit']";
     private static String defaultComment = "default comment";
     private static String heartLikes = "//span[@id='likes']";
+    private static String commentField = "//input[@id='comments']";
+    private String nthProperty;
+    private String nthPropertyLikes;
+    public static String propertiesProvinceURL = "https://grup5web.firebaseapp.com/properties/properties.html?region=";
     public static Integer currentLikes;
     public static Integer initialLikes;
     public static Integer propertyIndex;
     public static Integer initialHeartLikesAmount;
     public static Integer currentHeartLikesAmount;
-
-    private ElementsCollection getProperties() {
-        return $$x(propertiesList);
-    }
-
-    public void getPropertiesCount() {
-        propertiesCount = getProperties().size();
-    }
 
     public void openProvinceURL(String province) {
         open(propertiesProvinceURL + province);
@@ -43,7 +28,7 @@ public class Properties {
     }
 
     public static void filterPropertyBy(String filterValue) {
-        $x(propertiesFilterDropdownValue + filterValue +"']").click();
+        $x(propertiesFilterDropdownValue + filterValue + "']").click();
         GeneralSteps.waitDataToLoad();
     }
 
@@ -69,5 +54,4 @@ public class Properties {
         currentLikes = Integer.parseInt(amountOfLikes.replaceAll("[^\\d]", ""));
         return currentLikes;
     }
-
 }

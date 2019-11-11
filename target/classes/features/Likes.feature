@@ -1,7 +1,5 @@
-@registration
-Feature: Registration
-
-  @likes
+@likes
+Feature: Likes
 
   Scenario: Likes by new users are successfully applied
     Given Registration form is opened
